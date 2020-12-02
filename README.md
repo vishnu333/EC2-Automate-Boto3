@@ -1,11 +1,11 @@
-# EC2-Automate-Boto3
-fetch details of aws EC2 instance using python script
 
-OutPut :
+fetch details of aws EC2 instance using python script.
+
+Saves a EC2_List.json file contating details on the root directory.
+
+Outputs the following on terminal:
 
 Listing EC2 instances for each region....
-
-
 
 eu-north-1
 ---------

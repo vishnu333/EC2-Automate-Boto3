@@ -21,6 +21,7 @@ for Region in regions:
             i+=1
             instance_vise = {}
             instance_vise['InstanceId'] = instance['InstanceId']
+            instance_vise['InstanceType'] = instance['InstanceType']
             instance_vise['ImageId'] = instance['ImageId']
             instance_vise['Region'] = Region
             instance_vise['AvailabilityZone'] = instance['Placement']['AvailabilityZone']

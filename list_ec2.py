@@ -1,5 +1,6 @@
 import boto3
 import json
+import datetime
 # list regions
 client = boto3.client('ec2')
 regions = [region['RegionName'] for region in client.describe_regions()['Regions']]
@@ -26,6 +27,7 @@ for Region in regions:
             instance_vise['Region'] = Region
             instance_vise['AvailabilityZone'] = instance['Placement']['AvailabilityZone']
             instance_vise['State'] = instance['State']['Name']
+            instance_vise['LaunchTime'] = datetime_handler(instance['LaunchTime'])
             try:
                 instance_vise['PublicIpAddress'] = instance['PublicIpAddress']
             except Exception:

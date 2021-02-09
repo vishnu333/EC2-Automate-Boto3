@@ -7,10 +7,11 @@ regions = [region['RegionName'] for region in client.describe_regions()['Regions
 
 print("Listing EC2 instances for each region....\n")
 
+region_vise = []
+
+
 def datetime_handler(x):
     return x.isoformat()
-
-region_vise = []
 
 for Region in regions:
     print()
@@ -31,6 +32,8 @@ for Region in regions:
             instance_vise['AvailabilityZone'] = instance['Placement']['AvailabilityZone']
             instance_vise['State'] = instance['State']['Name']
             instance_vise['LaunchTime'] = datetime_handler(instance['LaunchTime'])
+            
+
             try:
                 instance_vise['PublicIpAddress'] = instance['PublicIpAddress']
             except Exception:

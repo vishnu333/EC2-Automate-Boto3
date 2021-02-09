@@ -7,6 +7,9 @@ regions = [region['RegionName'] for region in client.describe_regions()['Regions
 
 print("Listing EC2 instances for each region....\n")
 
+def datetime_handler(x):
+    return x.isoformat()
+
 region_vise = []
 
 for Region in regions:
